@@ -9,7 +9,9 @@ function SearchForm({ searchTerm }) {
         name="search"
         id="search"
         defaultValue={searchTerm}
+        placeholder="Enter letters, digits, and spaces only"
         required
+        pattern="^[A-Za-z0-9 ]+$"
       />
       <button type="submit">Search</button>
     </Form>
