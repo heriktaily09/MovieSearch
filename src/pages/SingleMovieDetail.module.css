@@ -27,6 +27,11 @@
     margin: 1rem auto;
 }
 
+.movieresError {
+    text-align: center;
+    color: var(--blue-color);
+}
+
 @media screen and (max-width: 700px) {
     .movieDetail {
         grid-template-columns: 1fr;

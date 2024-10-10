@@ -35,3 +35,33 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.error-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.error {
+  font-size: 10rem;
+  color: var(--blue-color);
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  text-align: center;
+}
+
+.error-home {
+  font-size: 1rem;
+  color: var(--blue-color);
+  margin: auto;
+  margin-top: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  text-align: center;
+  text-decoration: underline;
+}

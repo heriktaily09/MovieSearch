@@ -4,11 +4,11 @@ import { apiKey } from "../constants";
 import { useLoaderData } from "react-router-dom";
 import styles from "./SingleMovieDetail.module.css";
 export async function loader({ params }) {
-  const imdbId = params.imdbID;
+  let imdbId = params.imdbID;
+  if (!imdbId.startsWith("tt")) imdbId = "tt" + imdbId;
   const URL = `https://www.omdbapi.com/?i=${imdbId}&plot=full&apikey=${apiKey}`;
   try {
     const res = await axios.get(URL);
-    // console.log(res);
     return {
       movie: res.data,
       isError: false,
@@ -27,10 +27,10 @@ export async function loader({ params }) {
 function SingleMovieDetail() {
   const { movie: movieDetail, isError, error } = useLoaderData();
   if (movieDetail && movieDetail.Response === "False") {
-    return <h1>{movieDetail.Error}</h1>;
+    return <h1 className={`${styles.movieresError}`}>{movieDetail.Error}</h1>;
   }
   if (isError) {
-    return <h1>{error}</h1>;
+    return <h1 className={`${styles.movieresError}`}>{error}</h1>;
   }
   return (
     <div className={`container ${styles.movieDetail}`}>

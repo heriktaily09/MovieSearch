@@ -6,7 +6,9 @@ import { useLoaderData } from "react-router-dom";
 
 export async function loader({ request }) {
   const url = new URL(request.url);
-  const searchTerm = url.searchParams.get("search") || "one piece";
+  let searchTerm = url.searchParams.get("search") || "one piece";
+
+  searchTerm = searchTerm.trim() || "one piece";
   try {
     const movieSearchEndpoint = `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`;
     const response = await axios.get(movieSearchEndpoint);
