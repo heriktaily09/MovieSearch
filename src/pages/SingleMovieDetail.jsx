@@ -27,7 +27,7 @@ export async function loader({ params }) {
 function SingleMovieDetail() {
   const { movie: movieDetail, isError, error } = useLoaderData();
   if (movieDetail && movieDetail.Response === "False") {
-    return <h1 className={`${styles.movieresError}`}>{movieDetail.Error}</h1>;
+    return <h1 className={`${styles.movieresError}`}>{"Movie not found."}</h1>;
   }
   if (isError) {
     return <h1 className={`${styles.movieresError}`}>{error}</h1>;
