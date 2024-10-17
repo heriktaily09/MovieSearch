@@ -13,9 +13,9 @@ function Root() {
     // </nav>
     <div>
       <nav className={`container ${styles.nav}`}>
-        <Link to="/">
-          <h1>Movie Search</h1>
-        </Link>
+        <h1>
+          <Link to="/">Movie Search</Link>
+        </h1>
       </nav>
       {navigation.state === "loading" ? (
         <img src={LoadingSpinner} alt="Loading..." className="loadingSpinner" />
